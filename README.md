@@ -68,7 +68,7 @@ app.set('view', app.yui.view({
 }));
 
 // serving static yui modules
-app.use(yui.static());
+app.use(YUI.static());
 
 // creating a page with YUI embeded
 app.get('/bar', YUI.expose(), function (req, res, next) {
@@ -82,7 +82,7 @@ loc = new Locator({
     buildDirectory: 'build'
 });
 
-locator.plug(LocatorReact.yui())
+loc.plug(LocatorReact.yui())
     .plug(app.yui.plugin({
         registerGroup: true,
         registerServerModules: true
@@ -91,7 +91,7 @@ locator.plug(LocatorReact.yui())
 
         // listening for traffic only after locator finishes the walking process
         app.listen(3000, function () {
-            console.log("Server listening on port 8080");
+            console.log("Server listening on port 3000");
         });
 
     });
