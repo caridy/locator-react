@@ -5,6 +5,8 @@ Prototype of React template compiler for locator.
 
 This component is a result of a hack to try to integrate Facebook's [React][] framework with [Locator][] component from Yahoo! to compile [React][]'s templates into [YUI][] Modules that could be used on the server thru express and on the client thru [YAF][].
 
+The beaufy of this is that you can still maintain the separation between your markup and your code, and most important, you will NOT need to download the `transform` component into the client side since all markup pieces (in a form of templates) are accesible on-demand thru YUI Loader.
+
 _Note: This is not production ready by any means._
 
 [React]: https://github.com/facebook/react
@@ -28,6 +30,8 @@ By installing the module in your express application folder, you should be able 
 Usage
 -----
 
+### Integration with `locator` on the server side
+
 Normally, you will plug the locator plugin exposed by `locator-react` into the locator instance, and locator will be able to analyze every file in your express app, and it will compile any `*.react` or `*.jsx` into a YUI module that can be used thru `express-yui` for example. The example below describes how to use the yui plugin with locator:
 
 ```
@@ -41,6 +45,8 @@ loc.plug(LocatorReact.yui());
 // walking the filesystem for an express app
 loc.parseBundle(__dirname, {});
 ```
+
+### Server side with `express` and `express-yui`
 
 A more complete example will be:
 
@@ -91,7 +97,23 @@ locator.plug(LocatorReact.yui())
     });
 ```
 
-On the client side, any React template will be accessible as well thru `Y.use()` statement.
+### Client side with `yui`
+
+On the client side, any React template will be accessible as well thru `yui` as a regular yui module. Here is an example:
+
+```
+app.yui.use('<name-of-app>-templates-bar', function (Y) {
+
+    Y.Template._cache['<name-of-app>-templates-bar']({
+        tagline: 'testing with some data for template bar'
+    }, Y.one('#container'));
+
+});
+```
+
+In the example above, the `<name-of-app>` is the name specified in the `package.json` for your express application, and the template `bar.react` will be refreshed under the `#container` selector.
+
+_note: in the near future, `Y.Template.render()` will be the formal API instead of using the `_cache` object, which is protected._
 
 
 License
