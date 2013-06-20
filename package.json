@@ -1,0 +1,51 @@
+{
+    "name": "locator-react",
+    "description": "React template compiler for locator",
+    "version": "0.0.1",
+    "homepage": "https://github.com/caridy/locator-react",
+    "author": "Caridy Patino <caridy@gmail.com> (http://github.com/caridy)",
+    "contributors": [],
+    "dependencies": {
+        "react-tools": "0.3.x"
+    },
+    "main": "index",
+    "locator": {
+        "ruleset": "main"
+    },
+    "keywords": [
+        "framework",
+        "yui",
+        "mojito",
+        "modown",
+        "react",
+        "templates"
+    ],
+    "directories": {
+        "lib": "./lib",
+        "yui-modules": "./yui-modules"
+    },
+    "engines": {
+        "node": ">=0.8.x",
+        "npm" : ">=1.2.10"
+    },
+    "devDependencies": {
+        "chai": "*",
+        "istanbul": "*",
+        "jslint": "*",
+        "mocha": "*",
+        "mockery": "1.4.x",
+        "xunit-file": "*"
+    },
+    "scripts": {
+        "lint": "node node_modules/.bin/jslint lib/*.js yui_modules/*.js",
+        "test": "node node_modules/.bin/_mocha tests/lib/*.js --reporter spec"
+    },
+    "repository": {
+        "type": "git",
+        "url" : "https://github.com/caridy/locator-react.git"
+    },
+    "bugs": {
+        "url": "https://github.com/caridy/locator-react/issues"
+    },
+    "license": "MIT"
+}
