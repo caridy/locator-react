@@ -12,6 +12,19 @@ _Note: This is not production ready by any means._
 [YUI]: https://github.com/yui/yui3
 [YAF]: http://yuilibrary.com/yui/docs/app/
 
+
+Installation
+------------
+
+Install using npm:
+
+```shell
+$ npm install locator-react
+```
+
+By installing the module in your express application folder, you should be able to use it thru [Locator][].
+
+
 Usage
 -----
 
@@ -79,6 +92,7 @@ locator.plug(LocatorReact.yui())
 ```
 
 On the client side, any React template will be accessible as well thru `Y.use()` statement.
+
 
 License
 -------
