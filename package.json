@@ -1,7 +1,7 @@
 {
     "name": "locator-react",
     "description": "React template compiler for locator",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "homepage": "https://github.com/caridy/locator-react",
     "author": "Caridy Patino <caridy@gmail.com> (http://github.com/caridy)",
     "contributors": [],
@@ -10,7 +10,8 @@
     },
     "main": "index",
     "locator": {
-        "ruleset": "main"
+        "ruleset": "main",
+        "location": "./yui-modules"
     },
     "keywords": [
         "framework",
