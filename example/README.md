@@ -26,4 +26,7 @@ npm install
 node app.js
 ```
 
-Then navigate to `http://localhost:8080/bar` in your browser.
+Then navigate to:
+
+* `http://localhost:3000/bar`
+
