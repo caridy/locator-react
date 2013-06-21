@@ -9,6 +9,9 @@ YUI.add('template-react', function (Y, NAME) {
                     render: fn
                 }),
                 instance = component();
+
+            // supporting node and elements
+            node = (node && node._node) || node;
             // mixing in the template data
             Y.mix(instance.props, data, true);
             React.renderComponent(instance, node || fragment);
