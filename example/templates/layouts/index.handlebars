@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+
+    <title>locator-react demo</title>
+
+</head>
+<body>
+
+    <h1>Child element: </h1>
+
+    <div id="child">{{{body}}}</div>
+
+    <script>{{{state}}}</script>
+    <script>
+    // this is the code to be executed in the client side to
+    // boot the application.
+    app.yui.use('node', 'demo-templates-bar', function (Y) {
+        // re-hydrating the bar template with new data!
+        Y.Template._cache['demo-templates-bar']({
+            tagline: 'rendered from client side'
+        }, Y.one('#child'));
+        
+    });
+    </script>
+</body>
+</html>

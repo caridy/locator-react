@@ -1,0 +1,2 @@
+/** @jsx React.DOM */
+<p>{this.props.tagline}</p>
