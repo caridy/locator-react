@@ -5,7 +5,7 @@
 var express = require('express'),
     YUI = require('express-yui'),
     Locator = require('locator'),
-    LocatorReact = require('../'),
+    LocatorReact = require('locator-react'),
     LocatorHandlebars = require('locator-handlebars'),
     app = express();
 
