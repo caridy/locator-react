@@ -1,4 +1,4 @@
-YUI.add('template-react', function (Y, NAME) {
+YUI.add('template-react', function (Y) {
 
     var React = Y.config.global.React;
 
@@ -19,4 +19,4 @@ YUI.add('template-react', function (Y, NAME) {
         };
     };
 
-}, '', {requires: ['template-base', 'react']});
+}, '', {requires: ['template-base']});

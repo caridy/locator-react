@@ -15,15 +15,15 @@ app.yui.setCoreFromAppOrigin();
 // custom view engine to rely on yui templates
 app.set('view', app.yui.view({
     defaultBundle: 'demo',
-    defaultLayout: 'templates/layouts/index'
+    defaultLayout: 'index'
 }));
 
 // serving static yui modules
 app.use(YUI['static']());
 
 // creating a page with YUI embeded
-app.get('/bar', YUI.expose(), function (req, res, next) {
-    res.render('templates/bar', {
+app.get('/', YUI.expose(), function (req, res, next) {
+    res.render('bar', {
         tagline: 'testing with some data for template bar'
     });
 });

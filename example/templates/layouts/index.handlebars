@@ -10,7 +10,7 @@
 
     <h1>Child element: </h1>
 
-    <div id="child">{{{body}}}</div>
+    <div id="child">{{{outlet}}}</div>
 
     <script>{{{state}}}</script>
     <script>
@@ -18,10 +18,9 @@
     // boot the application.
     app.yui.use('node', 'demo-templates-bar', function (Y) {
         // re-hydrating the bar template with new data!
-        Y.Template._cache['demo-templates-bar']({
+        Y.Template._cache['demo/bar']({
             tagline: 'rendered from client side'
         }, Y.one('#child'));
-        
     });
     </script>
 </body>

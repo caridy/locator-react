@@ -59,7 +59,7 @@ On the client side, any React template will be accessible as well thru `yui` as 
 ```
 app.yui.use('<name-of-app>-templates-bar', function (Y) {
 
-    Y.Template._cache['<name-of-app>-templates-bar']({
+    Y.Template._cache['<name-of-app>/bar']({
         tagline: 'testing with some data for template bar'
     }, Y.one('#container'));
 

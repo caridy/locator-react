@@ -5,7 +5,11 @@
             "prependfiles": ["js/react.js"],
             "jsfiles": ["js/noop.js"],
             "config": {
-                "affinity": "client"
+                "affinity": "client",
+                "condition": {
+                    "name": "react",
+                    "trigger": "template-react"
+                }
             }
         }
     }
