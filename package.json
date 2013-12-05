@@ -6,9 +6,9 @@
     "author": "Caridy Patino <caridy@gmail.com> (http://github.com/caridy)",
     "contributors": [],
     "dependencies": {
-        "react-tools": "0.3.2"
+        "react-tools": "0.5.1"
     },
-    "main": "index",
+    "main": "lib/plugin",
     "locator": {
         "ruleset": "main",
         "location": "./yui-modules"
