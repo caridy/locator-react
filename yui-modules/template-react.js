@@ -2,25 +2,22 @@ YUI.add('template-react', function (Y) {
 
     var React = Y.config.global.React;
 
-    React.revive = React.revive || function (fn) {
+    React.revive = React.revive || function (component) {
         return function () {
-            var component = React.createClass({
-                    render: fn
-                }),
-                instance = component();
+            var instance = component();
             return function (data, node) {
-                var fragment = !node && document.createDocumentFragment();
-                // supporting node and elements
-                node = (node && node._node) || node;
                 // mixing in the template data
+                // TODO: why not instance.setProps()?
                 Y.mix(instance.props, data, true);
                 if (node) {
-                    React.renderComponent(instance, node);
+                    // supporting node and elements
+                    React.renderComponent(instance, node._node || node);
                     return; // not need to return the html since the node was passed in
                 }
                 // fallback to return the html if node was not provided
-                React.renderComponent(instance, fragment);
-                return fragment.innerHTML;
+                node = document.createDocumentFragment();
+                React.renderComponent(instance, node);
+                return node.innerHTML;
             };
         };
     };
